@@ -14,7 +14,13 @@ import * as yup from "yup"
 
 const validationSchema=yup.object().shape({
   name: yup.string('To polemusi być napisem').required('To pole jest wymagane').min(5 | "To p[ole musi mieć 5 liter"), 
-  age: yup.number('To pole musi byc numerem').min(18).max(99),
+  age: yup.number('To pole musi byc numerem').min(18).max(99).required(),
+  city: yup.string().min(3).required(),
+  photo: yup.string(),
+  zip: yup.string().length(6)
+  .matches(/^[0-9]{2}-[0-9]{3}/)
+  .required(),
+  telephone: yup.string().matches(/^\+[0-9]{11}/),
 
 });
  
@@ -65,6 +71,18 @@ export default function App() {
                     variant="filled"
                   />
                   <FormErrorMessage>{errors.age}</FormErrorMessage>
+                </FormControl>
+
+                <FormControl isInvalid={!!errors.city && touched.city}>
+                  <FormLabel htmlFor="age">Miasto</FormLabel>
+                  <Field
+                      as={Input}
+                    id="city"
+                    name="city"
+                    type="text"
+                    variant="filled"
+                  />
+                  <FormErrorMessage>{errors.city}</FormErrorMessage>
                 </FormControl>
 
                 <FormControl isInvalid={!!errors.volunteer && touched.volunteer}>
