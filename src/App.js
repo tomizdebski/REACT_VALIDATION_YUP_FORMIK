@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <Flex bg="gray.100" align="center" justify="center" h="100vh">
-        <Box bg="white" p={6} rounded="md" w={64}>
+        <Box bg="grey" p={6} rounded="md" w={300} borderRadius={10}>
           <Formik
             initialValues={{
               name: "",

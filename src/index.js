@@ -4,6 +4,8 @@ import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import Register from './Register';
+import FakeLogin from './FakeLogin';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -11,7 +13,17 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <StrictMode>
     <ColorModeScript />
-    <App />
+
+    {/* zad1 */}
+    {/* <App /> */}
+
+    {/* zad2 */}
+    {/* <Register/> */}
+
+    {/* zad3 */}
+    <FakeLogin/>
+
+
   </StrictMode>
 );
 
